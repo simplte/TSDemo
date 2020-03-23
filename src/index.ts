@@ -4,4 +4,5 @@
 // import './example/function';
 // import './example/generics';
 // import './example/es6-class';
-import './example/es6-class-better';
+// import './example/es6-class-better';
+import './example/class';
