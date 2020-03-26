@@ -5,4 +5,8 @@
 // import './example/generics';
 // import './example/es6-class';
 // import './example/es6-class-better';
-import './example/class';
+// import './example/class';
+// import './example/enum';
+// import './example/intence-compatibility.ts';
+// import './example/advanced-type-1.ts';
+import './example/advanced-type-2.ts';

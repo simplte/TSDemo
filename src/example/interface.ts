@@ -88,19 +88,19 @@ const t2: Tt3 = {
 // }
 // getC.count = 0;
 // ts
-interface Counter {
+interface Counter1 {
 	(): void;
 	count: Number;
 }
 
-const getCounter = (): Counter => {
+const getCounter = (): Counter1 => {
 	const c = () => {
 		c.count++;
 	};
 	c.count = 0;
 	return c;
 };
-const counter: Counter = getCounter();
+const counter: Counter1 = getCounter();
 counter();
 console.log(counter.count);
 counter();
