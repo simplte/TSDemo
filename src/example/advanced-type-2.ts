@@ -182,6 +182,64 @@ type typess = string & boolean;
 
 
 // 条件类型
-type tiaojianType<T> = T extends string ? string :number;
-let idx1 :tiaojianType<1>
-let idx2 :tiaojianType<string>
+// type tiaojianType<T> = T extends string ? string :number;
+// let idx1 :tiaojianType<1>
+// let idx2 :tiaojianType<string>
+
+// 条件类型和映射类型的结合
+
+// type Type5<T> = {
+// 	[K in keyof T]:T[K] extends Function ? K :never
+// }[keyof T]
+
+// 经过 Type5 类型的过滤 类型变成了
+/* 
+	{	
+		never,
+		never,
+		never,
+		undatePart
+	}
+	后经过 [keyof T] 过滤 掉never类型的数据
+	变成了
+	{
+		undatePart(newName:string)：void
+	}
+*/
+// interface Part {
+// 	id:number;
+// 	name: string;
+// 	subparts: Part[];
+// 	undatePart(newName:string):void
+// }
+// type Test1 = Type5<Part>
+
+// infer 类型推断
+type Type9<T> = T extends any[] ? T[number]:T;
+type test3 = Type9<string[]>;
+type test4 = Type9<string>;
+// string[][number] 表示的类型是string类型
+type test6 = string[][number];
+const tests: test6 = "[]";
+// console.log(tests);
+// infer推断出 数组中的类型是什么 U 代表数组中的数据类型
+// type Type10<T> = T extends Array<infer U> ? U :T;
+// type test5 = Type10<string[]>;
+
+// Exclude<T,U> 第二个参数是排除的类型
+type testType = Exclude<'a'|'b','a'>;
+// Extract<T,U>  只包含第二个参数的类型
+type testType2 = Extract<'a'|'b','b'>;
+// ReturnType<T>
+
+type testType3 = ReturnType<()=> string>;
+type testType4 = ReturnType<()=> void>;
+
+// InstanceType<T>
+class Aclass {
+	constructor() {};
+}
+type T1 = InstanceType<typeof Aclass>;
+type T2 = InstanceType<any>;
+type T3 = InstanceType<never>;
+// type T5 = InstanceType<string>;
