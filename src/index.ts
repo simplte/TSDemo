@@ -12,7 +12,9 @@
 // import './example/advanced-type-2.ts';
 // import './example/decorators.ts';
 // import './example/mixin.ts';
-import './example/update.ts';
+// import './example/update.ts';
+import './example/declaration-files.ts';
 // import './modules/index';
+import './modules/handle-title.js';
 // import './commenjs/index';
 // import './ts-modules/index';
