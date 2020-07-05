@@ -14,7 +14,8 @@
 // import './example/mixin.ts';
 // import './example/update.ts';
 // import './example/declaration-files.ts';
-import './example/project-declaration.ts';
+// import './example/project-declaration.ts';
+import './example/jsModel.ts';
 // import './modules/index';
 import './modules/handle-title.js';
 // import './commenjs/index';
